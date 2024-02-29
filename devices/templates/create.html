@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>METANIT.COM</title>
+</head>
+<body>
+    <h2>Добавление категории</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <p>
+            <label>Введите название категории</label><br>
+            <input type="text" name="name" />
+        </p>
+        <p>
+            <label>Введите цену</label><br>
+            <input type="number" name="Controlled" />
+        </p>
+        <p>
+            <label>Введите категорию</label><br>
+            <select name="DeviceType">
+            {% for DeviceType in types %}
+                 <input type="checkbox" name="types" value="{{DeviceType.id}}" />{{ DeviceType.name}} <br />
+            {% endfor %}
+            </select>
+        </p>
+        <input type="submit" value="Сохранить" >
+    </form>
+</body>
+</html>

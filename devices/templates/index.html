@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>METANIT.COM</title>
+</head>
+<body>
+    <a href="create/">Добавление устройства</a>
+    <table>
+        <thead><th>Выберите категорию</th></thead>
+        {% for product in products %}
+        <tr>
+            <td>{{ All_Parameters.SN }}</td>
+            <td>{{ All_Parameters.Controlled }}</td>
+            <td>{{ All_Parameters.Device_Type.name }}</td>
+            <td>
+                <a href="edit/{{All_Parameters.id}}">Изменить</a> | <a href="delete/{{All_Parameters.id}}">Удалить</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
